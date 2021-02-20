@@ -11,6 +11,7 @@ jobs:
 
     runs-on: windows-latest
     env:
+      deploy-branch: refs/heads/main
       github-pages-repo: https://github.com/BlazorFocused/documentation.git
       github-pages-repo-branch: test
       github-pages-repo-directory: gh-pages
@@ -39,16 +40,17 @@ jobs:
     - name: Build Docs
       shell: pwsh
       run: docfx build
-    - name: Prepare GitHub Pages Repo
+    - name: Pull GitHub Pages Repo
+      if: github.ref == '${{ env.deploy-branch }}'
       run: |
         cd ..
-        echo "############ ${{ github.ref }}"
         git config --global user.name ${{ env.github-user-name }}
         git config --global user.email ${{ env.github-user-email }}
         git clone -b ${{ env.github-pages-repo-branch }} ${{ env.github-pages-repo }} ${{ env.github-pages-repo-directory }}
         cd ${{ env.github-pages-repo-directory }}
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-    - name: Copy & Push Doc Files
+    - name: Push GitHub Pages
+      if: github.ref == '${{ env.deploy-branch }}'
       run: |
         cd ..
         rm -r ${{ env.github-pages-repo-directory }}/*
