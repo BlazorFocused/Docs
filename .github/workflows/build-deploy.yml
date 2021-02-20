@@ -41,7 +41,7 @@ jobs:
       shell: pwsh
       run: docfx build
     - name: Get GitHub Pages Repo
-      if: ${{ github.ref }} == '${{ env.deploy-branch }}'
+      if: github.ref == env.deploy-branch
       run: |
         cd ..
         git config --global user.name ${{ env.github-user-name }}
@@ -50,7 +50,7 @@ jobs:
         cd ${{ env.github-pages-repo-directory }}
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
     - name: Push GitHub Pages
-      if: ${{ github.ref }} == '${{ env.deploy-branch }}'
+      if: github.ref == env.deploy-branch
       run: |
         cd ..
         rm -r ${{ env.github-pages-repo-directory }}/*
