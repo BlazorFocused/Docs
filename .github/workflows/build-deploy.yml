@@ -31,8 +31,8 @@ jobs:
       run: choco install docfx -y
     - name: Get BlazorFocused Repo
       run: |
-      cd ..
-      git clone -b ${{ env.metadata-repo-branch }} ${{ env.metadata-repo }} ${{ env.metadata-repo-directory }}
+        cd ..
+        git clone -b ${{ env.metadata-repo-branch }} ${{ env.metadata-repo }} ${{ env.metadata-repo-directory }}
     - name: Generate Metadata
       shell: pwsh
       run: docfx metadata
