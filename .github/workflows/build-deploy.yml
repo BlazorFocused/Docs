@@ -54,7 +54,7 @@ jobs:
       run: |
         cd ..
         rm -r ${{ env.github-pages-repo-directory }}/*
-        mv ${{ github.workspace }}/build ${{ env.github-pages-repo-directory }}
+        cp -a ${{ github.workspace }}/build/. ${{ env.github-pages-repo-directory }}
         cd ${{ env.github-pages-repo-directory }}
         git add -A
         git commit -m "commit sha -> ${{ github.sha }}"
