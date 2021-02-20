@@ -42,6 +42,7 @@ jobs:
     - name: Prepare GitHub Pages Repo
       run: |
         cd ..
+        echo "############ ${{ github.ref }}"
         git config --global user.name ${{ env.github-user-name }}
         git config --global user.email ${{ env.github-user-email }}
         git clone -b ${{ env.github-pages-repo-branch }} ${{ env.github-pages-repo }} ${{ env.github-pages-repo-directory }}
@@ -51,7 +52,7 @@ jobs:
       run: |
         cd ..
         rm -r ${{ env.github-pages-repo-directory }}/*
-        mv ${{ env.metadata-repo-directory }}/build ${{ env.github-pages-repo-directory }}
+        mv ${{ github.workspace }}/build ${{ env.github-pages-repo-directory }}
         cd ${{ env.github-pages-repo-directory }}
         git add -A
         git commit -m "sha - ${{ github.sha }}"
