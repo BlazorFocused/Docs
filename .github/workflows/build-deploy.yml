@@ -4,16 +4,16 @@ on:
   pull_request:
     branches: [ main ]
   push:
-    branches: [directory]
+    branches: [main]
 
 env:
   current-repo-directory: documentation
-  deploy-branch: refs/heads/directory
+  deploy-branch: refs/heads/main
   github-pages-repo: https://github.com/BlazorFocused/documentation.git
-  github-pages-repo-branch: test
+  github-pages-repo-branch: gh-pages
   github-pages-repo-directory: gh-pages
   github-user-email: blazorfocused@users.noreply.github.com
-  github-user-name: Automated Build
+  github-user-name: Automation
   metadata-repo: https://github.com/BlazorFocused/BlazorFocused.git
   metadata-repo-branch: 1.0.1
   metadata-repo-directory: blazorfocused
