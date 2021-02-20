@@ -1,15 +1,15 @@
-name: Build Documentation
+name: Documentation CI/CD
 
 on:
   pull_request:
     branches: [ main ]
   push:
-    branches: [initial-docs]
+    branches: [main]
 
 env:
-  deploy-branch: refs/heads/initial-docs
+  deploy-branch: refs/heads/main
   github-pages-repo: https://github.com/BlazorFocused/documentation.git
-  github-pages-repo-branch: test
+  github-pages-repo-branch: gh-pages
   github-pages-repo-directory: gh-pages
   github-user-name: Automated Build
   github-user-email: blazorfocused@users.noreply.github.com
@@ -18,7 +18,7 @@ env:
   metadata-repo-directory: blazorfocused
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: windows-latest
 
     steps:
