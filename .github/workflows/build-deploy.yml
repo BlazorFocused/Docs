@@ -4,12 +4,12 @@ on:
   pull_request:
     branches: [ main ]
   push:
-    branches: [main]
+    branches: [directory]
 
 env:
-  deploy-branch: refs/heads/main
+  deploy-branch: refs/heads/directory
   github-pages-repo: https://github.com/BlazorFocused/documentation.git
-  github-pages-repo-branch: gh-pages
+  github-pages-repo-branch: test
   github-pages-repo-directory: gh-pages
   github-user-name: Automated Build
   github-user-email: blazorfocused@users.noreply.github.com
@@ -50,6 +50,7 @@ jobs:
         cd ${{ env.github-pages-repo-directory }}
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
     - name: Push GitHub Pages
+      shell: bash
       if: github.ref == env.deploy-branch
       run: |
         cd ..
