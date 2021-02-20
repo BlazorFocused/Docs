@@ -1,0 +1,58 @@
+name: Build Documentation
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [initial-docs]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+    env:
+      github-pages-repo: https://github.com/BlazorFocused/documentation.git
+      github-pages-repo-branch: test
+      github-pages-repo-directory: gh-pages
+      github-user-name: Automated
+      github-user-email: blazorfocused@users.noreply.github.com
+      metadata-repo: https://github.com/BlazorFocused/BlazorFocused.git
+      metadata-repo-branch: 1.0.1
+      metadata-repo-directory: blazorfocused
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Install DocFx
+      shell: pwsh
+      run: choco install docfx -y
+    - name: Get BlazorFocused Repo
+      run: |
+      cd ..
+      git clone -b ${{ env.metadata-repo-branch }} ${{ env.metadata-repo }} ${{ env.metadata-repo-directory }}
+    - name: Generate Metadata
+      shell: pwsh
+      run: docfx metadata
+    - name: Build Docs
+      shell: pwsh
+      run: docfx build
+    - name: Prepare GitHub Pages Repo
+      run: |
+        cd ..
+        git config --global user.name ${{ env.github-user-name }}
+        git config --global user.email ${{ env.github-user-email }}
+        git clone -b ${{ env.github-pages-repo-branch }} ${{ env.github-pages-repo }} ${{ env.github-pages-repo-directory }}
+        cd ${{ env.github-pages-repo-directory }}
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+    - name: Copy & Push Doc Files
+      run: |
+        cd ..
+        rm -r ${{ env.github-pages-repo-directory }}/*
+        mv ${{ env.metadata-repo-directory }}/build ${{ env.github-pages-repo-directory }}
+        cd ${{ env.github-pages-repo-directory }}
+        git add -A
+        git commit -m "sha - ${{ github.sha }}"
+        git push
