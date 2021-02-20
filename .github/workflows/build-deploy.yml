@@ -29,23 +29,19 @@ jobs:
         dotnet-version: 5.0.x
     - name: Install DocFx
       shell: pwsh
-      if: github.ref == ${{ env.deploy-branch }}
       run: choco install docfx -y
     - name: Get Metadata Repo
-      if: github.ref == ${{ env.deploy-branch }}
       run: |
         cd ..
         git clone -b ${{ env.metadata-repo-branch }} ${{ env.metadata-repo }} ${{ env.metadata-repo-directory }}
     - name: Generate Metadata
       shell: pwsh
-      if: github.ref == ${{ env.deploy-branch }}
       run: docfx metadata
     - name: Build Docs
       shell: pwsh
-      if: github.ref == ${{ env.deploy-branch }}
       run: docfx build
     - name: Get GitHub Pages Repo
-      if: github.ref == ${{ env.deploy-branch }}
+      if: ${{ github.ref }} == '${{ env.deploy-branch }}'
       run: |
         cd ..
         git config --global user.name ${{ env.github-user-name }}
@@ -54,7 +50,7 @@ jobs:
         cd ${{ env.github-pages-repo-directory }}
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
     - name: Push GitHub Pages
-      if: github.ref == ${{ env.deploy-branch }}
+      if: ${{ github.ref }} == '${{ env.deploy-branch }}'
       run: |
         cd ..
         rm -r ${{ env.github-pages-repo-directory }}/*
