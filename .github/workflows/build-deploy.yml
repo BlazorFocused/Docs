@@ -7,7 +7,7 @@ on:
     branches: [initial-docs]
 
 env:
-  deploy-branch: refs/heads/main
+  deploy-branch: refs/heads/initial-docs
   github-pages-repo: https://github.com/BlazorFocused/documentation.git
   github-pages-repo-branch: test
   github-pages-repo-directory: gh-pages
