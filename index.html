@@ -77,11 +77,8 @@
     services.AddControllersWithViews();
     services.AddRazorPages();
 
-    // initialized instance of the store's data
-    var testClass = new TestClass { FieldOne = &quot;Test&quot; };
-
     // add store in DI
-    serviceCollection.AddStore(testClass, builder =&gt;
+    serviceCollection.AddStore&lt;TestClass&gt;(builder =&gt;
     {
         builder.RegisterAction&lt;TestAction&gt;();
         builder.RegisterActionAsync&lt;TestActionAsync&gt;();
@@ -90,6 +87,9 @@
         // Services within actions and reducers
         builder.RegisterService&lt;TestService&gt;();
         builder.RegisterHttpClient&lt;ITestClient, TestClient&gt;();
+
+        // Set initial state (optional)
+        builder.SetInitialState(new TestClass { FieldOne = &quot;Test&quot; });
     });
 }
 </code></pre>
