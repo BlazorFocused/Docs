@@ -7,12 +7,13 @@ on:
     branches: [directory]
 
 env:
+  current-repo-directory: documentation
   deploy-branch: refs/heads/directory
   github-pages-repo: https://github.com/BlazorFocused/documentation.git
   github-pages-repo-branch: test
   github-pages-repo-directory: gh-pages
-  github-user-name: Automated Build
   github-user-email: blazorfocused@users.noreply.github.com
+  github-user-name: Automated Build
   metadata-repo: https://github.com/BlazorFocused/BlazorFocused.git
   metadata-repo-branch: 1.0.1
   metadata-repo-directory: blazorfocused
@@ -55,7 +56,7 @@ jobs:
       run: |
         cd ..
         rm -r ${{ env.github-pages-repo-directory }}/*
-        cp -a ${{ github.workspace }}/build/. ${{ env.github-pages-repo-directory }}
+        cp -a ${{ env.current-repo-directory }}/build/. ${{ env.github-pages-repo-directory }}
         cd ${{ env.github-pages-repo-directory }}
         git add -A
         git commit -m "commit sha -> ${{ github.sha }}"
