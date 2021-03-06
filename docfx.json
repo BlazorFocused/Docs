@@ -3,7 +3,7 @@
     {
       "src": [
         {
-          "files": ["BlazorFocused.Core.csproj"],
+          "files": ["BlazorFocused.csproj"],
           "src": "../BlazorFocused/src"
         }
       ],
