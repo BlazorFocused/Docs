@@ -13,7 +13,7 @@ Install-Package BlazorFocused
 .NET CLI
 
 ```powershell
-dotnet add package BlazoFocused
+dotnet add package BlazorFocused
 ```
 
 ## Quick Start
@@ -30,7 +30,7 @@ public void ConfigureServices(IServiceCollection services)
     serviceCollection.AddStore<TestClass>(builder =>
     {
         builder.RegisterAction<TestAction>();
-        builder.RegisterActionAsync<TestActionAsync>();
+        builder.RegisterAction<TestActionAsync>();
         builder.RegisterReducer<TestReducer, TestClassSubset>();
 
         // Services within actions and reducers
