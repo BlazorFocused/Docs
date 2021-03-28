@@ -53,9 +53,7 @@ jobs:
       - name: Generate Metadata
         shell: pwsh
         working-directory: ./${{ env.current-repo-directory }}
-        run: |
-          dir
-          docfx metadata
+        run: docfx metadata
 
       - name: Build Docs
         shell: pwsh
@@ -65,7 +63,6 @@ jobs:
       - name: Copy New GitHub Pages
         shell: bash
         run: |
-          cd ..
           rm -r ${{ env.github-pages-repo-directory }}/*
           cp -a ${{ env.current-repo-directory }}/build/. ${{ env.github-pages-repo-directory }}
 
