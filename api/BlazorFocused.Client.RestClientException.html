@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class SimulatedHttpTestException
+    <title>Class RestClientException
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class SimulatedHttpTestException
+    <meta name="title" content="Class RestClientException
    ">
     <meta name="generator" content="docfx 2.56.7.0">
     
@@ -68,10 +68,10 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="BlazorFocused.Testing.SimulatedHttpTestException">
+            <article class="content wrap" id="_content" data-uid="BlazorFocused.Client.RestClientException">
   
   
-  <h1 id="BlazorFocused_Testing_SimulatedHttpTestException" data-uid="BlazorFocused.Testing.SimulatedHttpTestException" class="text-break">Class SimulatedHttpTestException
+  <h1 id="BlazorFocused_Client_RestClientException" data-uid="BlazorFocused.Client.RestClientException" class="text-break">Class RestClientException
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
@@ -79,7 +79,7 @@
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">System.Exception</span></div>
-    <div class="level2"><span class="xref">SimulatedHttpTestException</span></div>
+    <div class="level2"><span class="xref">RestClientException</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -142,28 +142,70 @@
       <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="BlazorFocused.Testing.html">BlazorFocused.Testing</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="BlazorFocused.Client.html">BlazorFocused.Client</a></h6>
   <h6><strong>Assembly</strong>: BlazorFocused.dll</h6>
-  <h5 id="BlazorFocused_Testing_SimulatedHttpTestException_syntax">Syntax</h5>
+  <h5 id="BlazorFocused_Client_RestClientException_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SimulatedHttpTestException : Exception, ISerializable</code></pre>
+    <pre><code class="lang-csharp hljs">public class RestClientException : Exception, ISerializable</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/BlazorFocused/BlazorFocused/new/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/apiSpec/new?filename=BlazorFocused_Testing_SimulatedHttpTestException__ctor_System_String_.md&amp;value=---%0Auid%3A%20BlazorFocused.Testing.SimulatedHttpTestException.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/BlazorFocused/BlazorFocused/new/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/apiSpec/new?filename=BlazorFocused_Client_RestClientException__ctor_System_Net_Http_HttpMethod_System_Net_HttpStatusCode_System_String_.md&amp;value=---%0Auid%3A%20BlazorFocused.Client.RestClientException.%23ctor(System.Net.Http.HttpMethod%2CSystem.Net.HttpStatusCode%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/src/Testing/SimulatedHttpTestException.cs/#L7">View Source</a>
+    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/src/Client/RestClientException.cs/#L13">View Source</a>
   </span>
-  <a id="BlazorFocused_Testing_SimulatedHttpTestException__ctor_" data-uid="BlazorFocused.Testing.SimulatedHttpTestException.#ctor*"></a>
-  <h4 id="BlazorFocused_Testing_SimulatedHttpTestException__ctor_System_String_" data-uid="BlazorFocused.Testing.SimulatedHttpTestException.#ctor(System.String)">SimulatedHttpTestException(String)</h4>
+  <a id="BlazorFocused_Client_RestClientException__ctor_" data-uid="BlazorFocused.Client.RestClientException.#ctor*"></a>
+  <h4 id="BlazorFocused_Client_RestClientException__ctor_System_Net_Http_HttpMethod_System_Net_HttpStatusCode_System_String_" data-uid="BlazorFocused.Client.RestClientException.#ctor(System.Net.Http.HttpMethod,System.Net.HttpStatusCode,System.String)">RestClientException(HttpMethod, HttpStatusCode, String)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SimulatedHttpTestException(string message)</code></pre>
+    <pre><code class="lang-csharp hljs">public RestClientException(HttpMethod method, HttpStatusCode httpStatusCode, string url)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Net.Http.HttpMethod</span></td>
+        <td><span class="parametername">method</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Net.HttpStatusCode</span></td>
+        <td><span class="parametername">httpStatusCode</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">url</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BlazorFocused/BlazorFocused/new/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/apiSpec/new?filename=BlazorFocused_Client_RestClientException__ctor_System_String_.md&amp;value=---%0Auid%3A%20BlazorFocused.Client.RestClientException.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/src/Client/RestClientException.cs/#L9">View Source</a>
+  </span>
+  <a id="BlazorFocused_Client_RestClientException__ctor_" data-uid="BlazorFocused.Client.RestClientException.#ctor*"></a>
+  <h4 id="BlazorFocused_Client_RestClientException__ctor_System_String_" data-uid="BlazorFocused.Client.RestClientException.#ctor(System.String)">RestClientException(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RestClientException(string message)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -182,6 +224,43 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BlazorFocused/BlazorFocused/new/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/apiSpec/new?filename=BlazorFocused_Client_RestClientException__ctor_System_String_System_Exception_.md&amp;value=---%0Auid%3A%20BlazorFocused.Client.RestClientException.%23ctor(System.String%2CSystem.Exception)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/src/Client/RestClientException.cs/#L11">View Source</a>
+  </span>
+  <a id="BlazorFocused_Client_RestClientException__ctor_" data-uid="BlazorFocused.Client.RestClientException.#ctor*"></a>
+  <h4 id="BlazorFocused_Client_RestClientException__ctor_System_String_System_Exception_" data-uid="BlazorFocused.Client.RestClientException.#ctor(System.String,System.Exception)">RestClientException(String, Exception)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RestClientException(string message, Exception exception)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Exception</span></td>
+        <td><span class="parametername">exception</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <span class="xref">System.Runtime.Serialization.ISerializable</span>
@@ -194,10 +273,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/BlazorFocused/BlazorFocused/new/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/apiSpec/new?filename=BlazorFocused_Testing_SimulatedHttpTestException.md&amp;value=---%0Auid%3A%20BlazorFocused.Testing.SimulatedHttpTestException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/BlazorFocused/BlazorFocused/new/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/apiSpec/new?filename=BlazorFocused_Client_RestClientException.md&amp;value=---%0Auid%3A%20BlazorFocused.Client.RestClientException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/src/Testing/SimulatedHttpTestException.cs/#L5" class="contribution-link">View Source</a>
+                    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/src/Client/RestClientException.cs/#L7" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -73,10 +73,11 @@
   
   <h1 id="BlazorFocused_Client_IRestClient" data-uid="BlazorFocused.Client.IRestClient" class="text-break">Interface IRestClient
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Standardizes the handling of HTTP requests/responses within a given application.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="BlazorFocused.Client.html">BlazorFocused.Client</a></h6>
-  <h6><strong>Assembly</strong>: BlazorFocused.Core.dll</h6>
+  <h6><strong>Assembly</strong>: BlazorFocused.dll</h6>
   <h5 id="BlazorFocused_Client_IRestClient_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public interface IRestClient</code></pre>
@@ -85,18 +86,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/BlazorFocused/BlazorFocused/new/f206bfd28f91bb2da38d8e686537318ccab3ec8e/apiSpec/new?filename=BlazorFocused_Client_IRestClient_DeleteAsync__1_System_String_.md&amp;value=---%0Auid%3A%20BlazorFocused.Client.IRestClient.DeleteAsync%60%601(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/BlazorFocused/BlazorFocused/new/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/apiSpec/new?filename=BlazorFocused_Client_IRestClient_DeleteAsync__1_System_String_.md&amp;value=---%0Auid%3A%20BlazorFocused.Client.IRestClient.DeleteAsync%60%601(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/f206bfd28f91bb2da38d8e686537318ccab3ec8e/src/Client/IRestClient.cs/#L13">View Source</a>
+    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/src/Client/IRestClient.cs/#L19">View Source</a>
   </span>
   <a id="BlazorFocused_Client_IRestClient_DeleteAsync_" data-uid="BlazorFocused.Client.IRestClient.DeleteAsync*"></a>
   <h4 id="BlazorFocused_Client_IRestClient_DeleteAsync__1_System_String_" data-uid="BlazorFocused.Client.IRestClient.DeleteAsync``1(System.String)">DeleteAsync&lt;T&gt;(String)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Performs DELETE http request</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">ValueTask&lt;T&gt; DeleteAsync&lt;T&gt;(string relativeUrl)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;T&gt; DeleteAsync&lt;T&gt;(string relativeUrl)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -111,7 +113,8 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">relativeUrl</span></td>
-        <td></td>
+        <td><p>Relative url for http request</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -125,8 +128,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.ValueTask</span>&lt;T&gt;</td>
-        <td></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
+        <td><p>Http response body of type <see cref="!:&lt;T>"></see></p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -141,24 +145,29 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>Object type of response from http request</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="BlazorFocused_Client_IRestClient_DeleteAsync__1_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method will throw an exception for non-success status codes</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/BlazorFocused/BlazorFocused/new/f206bfd28f91bb2da38d8e686537318ccab3ec8e/apiSpec/new?filename=BlazorFocused_Client_IRestClient_GetAsync__1_System_String_.md&amp;value=---%0Auid%3A%20BlazorFocused.Client.IRestClient.GetAsync%60%601(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/BlazorFocused/BlazorFocused/new/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/apiSpec/new?filename=BlazorFocused_Client_IRestClient_GetAsync__1_System_String_.md&amp;value=---%0Auid%3A%20BlazorFocused.Client.IRestClient.GetAsync%60%601(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/f206bfd28f91bb2da38d8e686537318ccab3ec8e/src/Client/IRestClient.cs/#L7">View Source</a>
+    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/src/Client/IRestClient.cs/#L30">View Source</a>
   </span>
   <a id="BlazorFocused_Client_IRestClient_GetAsync_" data-uid="BlazorFocused.Client.IRestClient.GetAsync*"></a>
   <h4 id="BlazorFocused_Client_IRestClient_GetAsync__1_System_String_" data-uid="BlazorFocused.Client.IRestClient.GetAsync``1(System.String)">GetAsync&lt;T&gt;(String)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Performs GET http request</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">ValueTask&lt;T&gt; GetAsync&lt;T&gt;(string relativeUrl)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;T&gt; GetAsync&lt;T&gt;(string relativeUrl)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -173,7 +182,8 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">relativeUrl</span></td>
-        <td></td>
+        <td><p>Relative url for http request</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -187,8 +197,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.ValueTask</span>&lt;T&gt;</td>
-        <td></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
+        <td><p>Http response body of type <see cref="!:&lt;T>"></see></p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -203,24 +214,104 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>Object type of response from http request</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="BlazorFocused_Client_IRestClient_GetAsync__1_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method will throw an exception for non-success status codes</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/BlazorFocused/BlazorFocused/new/f206bfd28f91bb2da38d8e686537318ccab3ec8e/apiSpec/new?filename=BlazorFocused_Client_IRestClient_PostAsync__1_System_String_System_Object_.md&amp;value=---%0Auid%3A%20BlazorFocused.Client.IRestClient.PostAsync%60%601(System.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/BlazorFocused/BlazorFocused/new/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/apiSpec/new?filename=BlazorFocused_Client_IRestClient_PatchAsync__1_System_String_System_Object_.md&amp;value=---%0Auid%3A%20BlazorFocused.Client.IRestClient.PatchAsync%60%601(System.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/f206bfd28f91bb2da38d8e686537318ccab3ec8e/src/Client/IRestClient.cs/#L9">View Source</a>
+    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/src/Client/IRestClient.cs/#L42">View Source</a>
+  </span>
+  <a id="BlazorFocused_Client_IRestClient_PatchAsync_" data-uid="BlazorFocused.Client.IRestClient.PatchAsync*"></a>
+  <h4 id="BlazorFocused_Client_IRestClient_PatchAsync__1_System_String_System_Object_" data-uid="BlazorFocused.Client.IRestClient.PatchAsync``1(System.String,System.Object)">PatchAsync&lt;T&gt;(String, Object)</h4>
+  <div class="markdown level1 summary"><p>Performs PATCH http request</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;T&gt; PatchAsync&lt;T&gt;(string relativeUrl, object data)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">relativeUrl</span></td>
+        <td><p>Relative url for http request</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">data</span></td>
+        <td><p>Http request object body</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
+        <td><p>Http response body of type <see cref="!:&lt;T>"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Object type of response from http request</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="BlazorFocused_Client_IRestClient_PatchAsync__1_System_String_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method will throw an exception for non-success status codes</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BlazorFocused/BlazorFocused/new/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/apiSpec/new?filename=BlazorFocused_Client_IRestClient_PostAsync__1_System_String_System_Object_.md&amp;value=---%0Auid%3A%20BlazorFocused.Client.IRestClient.PostAsync%60%601(System.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/src/Client/IRestClient.cs/#L54">View Source</a>
   </span>
   <a id="BlazorFocused_Client_IRestClient_PostAsync_" data-uid="BlazorFocused.Client.IRestClient.PostAsync*"></a>
   <h4 id="BlazorFocused_Client_IRestClient_PostAsync__1_System_String_System_Object_" data-uid="BlazorFocused.Client.IRestClient.PostAsync``1(System.String,System.Object)">PostAsync&lt;T&gt;(String, Object)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Performs POST http request</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">ValueTask&lt;T&gt; PostAsync&lt;T&gt;(string relativeUrl, object data)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;T&gt; PostAsync&lt;T&gt;(string relativeUrl, object data)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -235,12 +326,14 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">relativeUrl</span></td>
-        <td></td>
+        <td><p>Relative url for http request</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">data</span></td>
-        <td></td>
+        <td><p>Http request object body</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -254,8 +347,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.ValueTask</span>&lt;T&gt;</td>
-        <td></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
+        <td><p>Http response body of type <see cref="!:&lt;T>"></see></p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -270,24 +364,29 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>Object type of response from http request</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="BlazorFocused_Client_IRestClient_PostAsync__1_System_String_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method will throw an exception for non-success status codes</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/BlazorFocused/BlazorFocused/new/f206bfd28f91bb2da38d8e686537318ccab3ec8e/apiSpec/new?filename=BlazorFocused_Client_IRestClient_PutAsync__1_System_String_System_Object_.md&amp;value=---%0Auid%3A%20BlazorFocused.Client.IRestClient.PutAsync%60%601(System.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/BlazorFocused/BlazorFocused/new/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/apiSpec/new?filename=BlazorFocused_Client_IRestClient_PutAsync__1_System_String_System_Object_.md&amp;value=---%0Auid%3A%20BlazorFocused.Client.IRestClient.PutAsync%60%601(System.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/f206bfd28f91bb2da38d8e686537318ccab3ec8e/src/Client/IRestClient.cs/#L11">View Source</a>
+    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/src/Client/IRestClient.cs/#L66">View Source</a>
   </span>
   <a id="BlazorFocused_Client_IRestClient_PutAsync_" data-uid="BlazorFocused.Client.IRestClient.PutAsync*"></a>
   <h4 id="BlazorFocused_Client_IRestClient_PutAsync__1_System_String_System_Object_" data-uid="BlazorFocused.Client.IRestClient.PutAsync``1(System.String,System.Object)">PutAsync&lt;T&gt;(String, Object)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Performs PUT http request</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">ValueTask&lt;T&gt; PutAsync&lt;T&gt;(string relativeUrl, object data)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;T&gt; PutAsync&lt;T&gt;(string relativeUrl, object data)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -302,12 +401,14 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">relativeUrl</span></td>
-        <td></td>
+        <td><p>Relative url for http request</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">data</span></td>
-        <td></td>
+        <td><p>Http request object body</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -321,8 +422,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.ValueTask</span>&lt;T&gt;</td>
-        <td></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
+        <td><p>Http response body of type <see cref="!:&lt;T>"></see></p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -337,10 +439,397 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>Object type of response from http request</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="BlazorFocused_Client_IRestClient_PutAsync__1_System_String_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method will throw an exception for non-success status codes</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BlazorFocused/BlazorFocused/new/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/apiSpec/new?filename=BlazorFocused_Client_IRestClient_TryDeleteAsync__1_System_String_.md&amp;value=---%0Auid%3A%20BlazorFocused.Client.IRestClient.TryDeleteAsync%60%601(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/src/Client/IRestClient.cs/#L83">View Source</a>
+  </span>
+  <a id="BlazorFocused_Client_IRestClient_TryDeleteAsync_" data-uid="BlazorFocused.Client.IRestClient.TryDeleteAsync*"></a>
+  <h4 id="BlazorFocused_Client_IRestClient_TryDeleteAsync__1_System_String_" data-uid="BlazorFocused.Client.IRestClient.TryDeleteAsync``1(System.String)">TryDeleteAsync&lt;T&gt;(String)</h4>
+  <div class="markdown level1 summary"><p>Performs DELETE http request</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;RestClientResponse&lt;T&gt;&gt; TryDeleteAsync&lt;T&gt;(string relativeUrl)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">relativeUrl</span></td>
+        <td><p>Relative url for http request</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="BlazorFocused.Client.RestClientResponse-1.html">RestClientResponse</a>&lt;T&gt;&gt;</td>
+        <td><p>Http response attributes including value, status code, or any exceptions.
+See <a class="xref" href="BlazorFocused.Client.RestClientResponse-1.html">RestClientResponse&lt;T&gt;</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Object type of response from http request</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="BlazorFocused_Client_IRestClient_TryDeleteAsync__1_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If request is successful, value is returned.
+If request is not successful, exception is returned.
+Success is indicated by &quot;IsValid&quot; property.
+See <a class="xref" href="BlazorFocused.Client.RestClientResponse-1.html">RestClientResponse&lt;T&gt;</a></p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BlazorFocused/BlazorFocused/new/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/apiSpec/new?filename=BlazorFocused_Client_IRestClient_TryGetAsync__1_System_String_.md&amp;value=---%0Auid%3A%20BlazorFocused.Client.IRestClient.TryGetAsync%60%601(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/src/Client/IRestClient.cs/#L100">View Source</a>
+  </span>
+  <a id="BlazorFocused_Client_IRestClient_TryGetAsync_" data-uid="BlazorFocused.Client.IRestClient.TryGetAsync*"></a>
+  <h4 id="BlazorFocused_Client_IRestClient_TryGetAsync__1_System_String_" data-uid="BlazorFocused.Client.IRestClient.TryGetAsync``1(System.String)">TryGetAsync&lt;T&gt;(String)</h4>
+  <div class="markdown level1 summary"><p>Performs GET http request</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;RestClientResponse&lt;T&gt;&gt; TryGetAsync&lt;T&gt;(string relativeUrl)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">relativeUrl</span></td>
+        <td><p>Relative url for http request</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="BlazorFocused.Client.RestClientResponse-1.html">RestClientResponse</a>&lt;T&gt;&gt;</td>
+        <td><p>Http response attributes including body, status code, or any exceptions that occurred.
+See <a class="xref" href="BlazorFocused.Client.RestClientResponse-1.html">RestClientResponse&lt;T&gt;</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Object type of response from http request</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="BlazorFocused_Client_IRestClient_TryGetAsync__1_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If request is successful, value is returned.
+If request is not successful, exception is returned.
+Success is indicated by &quot;IsValid&quot; property.
+See <a class="xref" href="BlazorFocused.Client.RestClientResponse-1.html">RestClientResponse&lt;T&gt;</a></p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BlazorFocused/BlazorFocused/new/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/apiSpec/new?filename=BlazorFocused_Client_IRestClient_TryPatchAsync__1_System_String_System_Object_.md&amp;value=---%0Auid%3A%20BlazorFocused.Client.IRestClient.TryPatchAsync%60%601(System.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/src/Client/IRestClient.cs/#L118">View Source</a>
+  </span>
+  <a id="BlazorFocused_Client_IRestClient_TryPatchAsync_" data-uid="BlazorFocused.Client.IRestClient.TryPatchAsync*"></a>
+  <h4 id="BlazorFocused_Client_IRestClient_TryPatchAsync__1_System_String_System_Object_" data-uid="BlazorFocused.Client.IRestClient.TryPatchAsync``1(System.String,System.Object)">TryPatchAsync&lt;T&gt;(String, Object)</h4>
+  <div class="markdown level1 summary"><p>Performs PATCH http request</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;RestClientResponse&lt;T&gt;&gt; TryPatchAsync&lt;T&gt;(string relativeUrl, object data)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">relativeUrl</span></td>
+        <td><p>Relative url for http request</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">data</span></td>
+        <td><p>Http request object body</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="BlazorFocused.Client.RestClientResponse-1.html">RestClientResponse</a>&lt;T&gt;&gt;</td>
+        <td><p>Http response attributes including body, status code, or any exceptions that occurred.
+See <a class="xref" href="BlazorFocused.Client.RestClientResponse-1.html">RestClientResponse&lt;T&gt;</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Object type of response from http request</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="BlazorFocused_Client_IRestClient_TryPatchAsync__1_System_String_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If request is successful, value is returned.
+If request is not successful, exception is returned.
+Success is indicated by &quot;IsValid&quot; property.
+See <a class="xref" href="BlazorFocused.Client.RestClientResponse-1.html">RestClientResponse&lt;T&gt;</a></p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BlazorFocused/BlazorFocused/new/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/apiSpec/new?filename=BlazorFocused_Client_IRestClient_TryPostAsync__1_System_String_System_Object_.md&amp;value=---%0Auid%3A%20BlazorFocused.Client.IRestClient.TryPostAsync%60%601(System.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/src/Client/IRestClient.cs/#L136">View Source</a>
+  </span>
+  <a id="BlazorFocused_Client_IRestClient_TryPostAsync_" data-uid="BlazorFocused.Client.IRestClient.TryPostAsync*"></a>
+  <h4 id="BlazorFocused_Client_IRestClient_TryPostAsync__1_System_String_System_Object_" data-uid="BlazorFocused.Client.IRestClient.TryPostAsync``1(System.String,System.Object)">TryPostAsync&lt;T&gt;(String, Object)</h4>
+  <div class="markdown level1 summary"><p>Performs POST http request</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;RestClientResponse&lt;T&gt;&gt; TryPostAsync&lt;T&gt;(string relativeUrl, object data)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">relativeUrl</span></td>
+        <td><p>Relative url for http request</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">data</span></td>
+        <td><p>Http request object body</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="BlazorFocused.Client.RestClientResponse-1.html">RestClientResponse</a>&lt;T&gt;&gt;</td>
+        <td><p>Http response attributes including body, status code, or any exceptions that occurred.
+See <a class="xref" href="BlazorFocused.Client.RestClientResponse-1.html">RestClientResponse&lt;T&gt;</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Object type of response from http request</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="BlazorFocused_Client_IRestClient_TryPostAsync__1_System_String_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If request is successful, value is returned.
+If request is not successful, exception is returned.
+Success is indicated by &quot;IsValid&quot; property.
+See <a class="xref" href="BlazorFocused.Client.RestClientResponse-1.html">RestClientResponse&lt;T&gt;</a></p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BlazorFocused/BlazorFocused/new/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/apiSpec/new?filename=BlazorFocused_Client_IRestClient_TryPutAsync__1_System_String_System_Object_.md&amp;value=---%0Auid%3A%20BlazorFocused.Client.IRestClient.TryPutAsync%60%601(System.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/src/Client/IRestClient.cs/#L154">View Source</a>
+  </span>
+  <a id="BlazorFocused_Client_IRestClient_TryPutAsync_" data-uid="BlazorFocused.Client.IRestClient.TryPutAsync*"></a>
+  <h4 id="BlazorFocused_Client_IRestClient_TryPutAsync__1_System_String_System_Object_" data-uid="BlazorFocused.Client.IRestClient.TryPutAsync``1(System.String,System.Object)">TryPutAsync&lt;T&gt;(String, Object)</h4>
+  <div class="markdown level1 summary"><p>Performs PUT http request</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;RestClientResponse&lt;T&gt;&gt; TryPutAsync&lt;T&gt;(string relativeUrl, object data)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">relativeUrl</span></td>
+        <td><p>Relative url for http request</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">data</span></td>
+        <td><p>Http request object body</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="BlazorFocused.Client.RestClientResponse-1.html">RestClientResponse</a>&lt;T&gt;&gt;</td>
+        <td><p>Http response attributes including body, status code, or any exceptions that occurred.
+See <a class="xref" href="BlazorFocused.Client.RestClientResponse-1.html">RestClientResponse&lt;T&gt;</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Object type of response from http request</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="BlazorFocused_Client_IRestClient_TryPutAsync__1_System_String_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If request is successful, value is returned.
+If request is not successful, exception is returned.
+Success is indicated by &quot;IsValid&quot; property.
+See <a class="xref" href="BlazorFocused.Client.RestClientResponse-1.html">RestClientResponse&lt;T&gt;</a></p>
+</div>
 </article>
           </div>
           
@@ -349,10 +838,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/BlazorFocused/BlazorFocused/new/f206bfd28f91bb2da38d8e686537318ccab3ec8e/apiSpec/new?filename=BlazorFocused_Client_IRestClient.md&amp;value=---%0Auid%3A%20BlazorFocused.Client.IRestClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/BlazorFocused/BlazorFocused/new/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/apiSpec/new?filename=BlazorFocused_Client_IRestClient.md&amp;value=---%0Auid%3A%20BlazorFocused.Client.IRestClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/f206bfd28f91bb2da38d8e686537318ccab3ec8e/src/Client/IRestClient.cs/#L5" class="contribution-link">View Source</a>
+                    <a href="https://github.com/BlazorFocused/BlazorFocused/blob/29e01f4187bc6814c0ed65ddfa110b6a533ec2c3/src/Client/IRestClient.cs/#L8" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "D:/a/Docs/Docs",
+  "source_base_path": "D:/a/Docs/Docs/Docs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -20,7 +20,31 @@
       "output": {
         ".html": {
           "relative_path": "api/BlazorFocused.Client.IRestClient.html",
-          "hash": "daJ/CrFKJH458l3qacgBeA=="
+          "hash": "+cMwEUqExH3pkjEKTYgg7Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BlazorFocused.Client.RestClientException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BlazorFocused.Client.RestClientException.html",
+          "hash": "0N31ll2SeMBo8dfjy1XaBQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BlazorFocused.Client.RestClientResponse-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BlazorFocused.Client.RestClientResponse-1.html",
+          "hash": "0WSl13JLClLryQNIXRlIbw=="
         }
       },
       "is_incremental": false,
@@ -32,7 +56,7 @@
       "output": {
         ".html": {
           "relative_path": "api/BlazorFocused.Client.ServiceCollectionExtensions.html",
-          "hash": "rmpSEBKn/7XL7TsIOYFqdQ=="
+          "hash": "7zJC2nshpYJDK/4EM99Dcg=="
         }
       },
       "is_incremental": false,
@@ -44,7 +68,7 @@
       "output": {
         ".html": {
           "relative_path": "api/BlazorFocused.Client.StoreBuilderExtensions.html",
-          "hash": "XaiYF7PfCFcq0MeLrNDkhw=="
+          "hash": "NO6K6ycuqRgZK3PxUn52CA=="
         }
       },
       "is_incremental": false,
@@ -56,7 +80,7 @@
       "output": {
         ".html": {
           "relative_path": "api/BlazorFocused.Client.html",
-          "hash": "MFYk9DK3m3m9czrznTstuQ=="
+          "hash": "vwTIJPnEIhiTT4nZi7+cDQ=="
         }
       },
       "is_incremental": false,
@@ -68,7 +92,19 @@
       "output": {
         ".html": {
           "relative_path": "api/BlazorFocused.Store.IAction-1.html",
-          "hash": "DYur0EP25JqBVmJXJzzhLw=="
+          "hash": "4/1CjP0FsrfPzVw/OUu6jQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BlazorFocused.Store.IAction-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BlazorFocused.Store.IAction-2.html",
+          "hash": "OBqcUf9hwguF2/KH2T5HIQ=="
         }
       },
       "is_incremental": false,
@@ -80,7 +116,19 @@
       "output": {
         ".html": {
           "relative_path": "api/BlazorFocused.Store.IActionAsync-1.html",
-          "hash": "Z8Gq1ySeOUmXwg8d4X5oCg=="
+          "hash": "q2a0qSiG8wnSzW/f/rFSyg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BlazorFocused.Store.IActionAsync-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BlazorFocused.Store.IActionAsync-2.html",
+          "hash": "mDVvoDeANnmyoi0zt4A3Eg=="
         }
       },
       "is_incremental": false,
@@ -92,7 +140,7 @@
       "output": {
         ".html": {
           "relative_path": "api/BlazorFocused.Store.IReducer-2.html",
-          "hash": "MCP0KrNliuTpqJ5jmmfr4Q=="
+          "hash": "zua73S8jT71pHd7zjThpXg=="
         }
       },
       "is_incremental": false,
@@ -104,7 +152,19 @@
       "output": {
         ".html": {
           "relative_path": "api/BlazorFocused.Store.IStore-1.html",
-          "hash": "gF7hnzI2dEYkzVUldToCEw=="
+          "hash": "HBjRzGl8rTU9jtmDo2Eh4Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BlazorFocused.Store.IStoreAction-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BlazorFocused.Store.IStoreAction-1.html",
+          "hash": "3ynxDLae1Az+DXAR5VIjiA=="
         }
       },
       "is_incremental": false,
@@ -116,7 +176,7 @@
       "output": {
         ".html": {
           "relative_path": "api/BlazorFocused.Store.IStoreBuilder-1.html",
-          "hash": "ALqFxYBzhKpTfqg/sysDNQ=="
+          "hash": "DE5Ky354RwTw6Svw2zptqg=="
         }
       },
       "is_incremental": false,
@@ -128,7 +188,7 @@
       "output": {
         ".html": {
           "relative_path": "api/BlazorFocused.Store.ServiceCollectionExtensions.html",
-          "hash": "SSnI1KYZSx+FA/Pooc2K4g=="
+          "hash": "ucFmkdyYwKhZU9jG3tr+4g=="
         }
       },
       "is_incremental": false,
@@ -140,7 +200,7 @@
       "output": {
         ".html": {
           "relative_path": "api/BlazorFocused.Store.html",
-          "hash": "iKW/pEpWTZ6tn+W9EJv/dg=="
+          "hash": "+FHvC67L0pVxH2gKqq/m/g=="
         }
       },
       "is_incremental": false,
@@ -152,7 +212,7 @@
       "output": {
         ".html": {
           "relative_path": "api/BlazorFocused.Testing.ISimulatedHttp.html",
-          "hash": "KtKy8SGAp3rm7ncz1NwB5w=="
+          "hash": "ysOsoW9n1h1EMGRRuTyHKg=="
         }
       },
       "is_incremental": false,
@@ -164,7 +224,7 @@
       "output": {
         ".html": {
           "relative_path": "api/BlazorFocused.Testing.ISimulatedHttpSetup.html",
-          "hash": "0Ab3JJbJG+0cFU3/4S+8QQ=="
+          "hash": "NuZcdvJdITECj6BxrdbWZA=="
         }
       },
       "is_incremental": false,
@@ -176,7 +236,7 @@
       "output": {
         ".html": {
           "relative_path": "api/BlazorFocused.Testing.SimulatedHttp.html",
-          "hash": "m1S/QjJxJcCfavhISiPMQg=="
+          "hash": "FMDOSsvXee/98ads+FBfCQ=="
         }
       },
       "is_incremental": false,
@@ -188,7 +248,7 @@
       "output": {
         ".html": {
           "relative_path": "api/BlazorFocused.Testing.SimulatedHttpTestException.html",
-          "hash": "ySbZZos7o5UQq7nH6+y0mw=="
+          "hash": "yxn3lhQ2dltFeUB6yyAwYQ=="
         }
       },
       "is_incremental": false,
@@ -224,7 +284,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "MeN/lAXkmuWmm4C8lgmENg=="
+          "hash": "p6Jky1nIIBWEhZ0Su5UMlw=="
         }
       },
       "is_incremental": false,
@@ -299,7 +359,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 16,
+          "total_file_count": 21,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
