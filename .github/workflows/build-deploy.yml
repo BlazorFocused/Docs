@@ -24,7 +24,6 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout Docs Repo
       - uses: actions/checkout@v2
         with:
           path: ${{ env.current-repo-directory }}
