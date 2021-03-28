@@ -9,7 +9,6 @@ on:
 env:
   current-repo-directory: Docs
   deploy-branch: refs/heads/main
-  # github-pages-repo: https://github.com/BlazorFocused/Docs.git
   github-pages-repo-branch: gh-pages
   github-pages-repo-directory: gh-pages
   github-user-email: blazorfocused@users.noreply.github.com
@@ -25,8 +24,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        with:
-          path: ${{ env.current-repo-directory }}
 
       - name: Checkout Metadata Repo
       - uses: actions/checkout@v2
