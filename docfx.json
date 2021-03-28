@@ -36,6 +36,10 @@
         "exclude": ["obj/**", "build/**"]
       }
     ],
+    "globalMetadata": {
+      "_appTitle": "Documentation",
+      "_appLogoPath": "images/BlazorFocused.png"
+    },
     "dest": "build",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
