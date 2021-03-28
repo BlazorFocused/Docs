@@ -32,6 +32,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           path: ${{ env.metadata-repo-directory }}
+          ref: ${{ env.metadata-repo-branch}}
           repository: ${{ env.organization }}/${{ env.metadata-repo }}
 
       - name: Checkout GitHub Pages Branch
@@ -51,15 +52,18 @@ jobs:
 
       - name: Generate Metadata
         shell: pwsh
-        run: docfx metadata
+        working-directory: ./${{ env.current-repo-directory }}
+        run: |
+          dir
+          docfx metadata
 
       - name: Build Docs
         shell: pwsh
+        working-directory: ./${{ env.current-repo-directory }}
         run: docfx build
 
       - name: Copy New GitHub Pages
         shell: bash
-        working-directory: ../
         run: |
           cd ..
           rm -r ${{ env.github-pages-repo-directory }}/*
@@ -73,7 +77,7 @@ jobs:
 
       - name: Push New GitHub Pages
         shell: bash
-        working-directory: ../${{ env.github-pages-repo-directory }}
+        working-directory: ./${{ env.github-pages-repo-directory }}
         run: |
           git add -A
           git commit -m "commit sha -> ${{ github.sha }}"
