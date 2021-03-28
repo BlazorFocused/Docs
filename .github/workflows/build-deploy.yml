@@ -9,55 +9,73 @@ on:
 env:
   current-repo-directory: Docs
   deploy-branch: refs/heads/main
-  github-pages-repo: https://github.com/BlazorFocused/Docs.git
+  # github-pages-repo: https://github.com/BlazorFocused/Docs.git
   github-pages-repo-branch: gh-pages
   github-pages-repo-directory: gh-pages
   github-user-email: blazorfocused@users.noreply.github.com
   github-user-name: Automation
-  metadata-repo: https://github.com/BlazorFocused/BlazorFocused.git
-  metadata-repo-branch: 1.0.2
+  metadata-repo: BlazorFocused
+  metadata-repo-branch: 1.1.1
   metadata-repo-directory: blazorfocused
+  organization: BlazorFocused
 
 jobs:
   build-and-deploy:
     runs-on: windows-latest
 
     steps:
+      - name: Checkout Docs Repo
       - uses: actions/checkout@v2
+        with:
+          path: ${{ env.current-repo-directory }}
+
+      - name: Checkout Metadata Repo
+      - uses: actions/checkout@v2
+        with:
+          path: ${{ env.metadata-repo-directory }}
+          repository: ${{ env.organization }}/${{ env.metadata-repo }}
+
+      - name: Checkout GitHub Pages Branch
+      - uses: actions/checkout@v2
+        with:
+          path: ${{ env.github-pages-repo-directory }}
+          ref: ${{ env.github-pages-repo-branch }}
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 5.0.x
+
       - name: Install DocFx
         shell: pwsh
         run: choco install docfx -y
-      - name: Get Metadata Repo
-        run: |
-          cd ..
-          git clone -b ${{ env.metadata-repo-branch }} ${{ env.metadata-repo }} ${{ env.metadata-repo-directory }}
+
       - name: Generate Metadata
         shell: pwsh
         run: docfx metadata
+
       - name: Build Docs
         shell: pwsh
         run: docfx build
-      - name: Get GitHub Pages Repo
-        if: github.ref == env.deploy-branch
+
+      - name: Copy New GitHub Pages
+        shell: bash
+        working-directory: ../
         run: |
-          cd ..
-          git config --global user.name ${{ env.github-user-name }}
-          git config --global user.email ${{ env.github-user-email }}
-          git clone -b ${{ env.github-pages-repo-branch }} ${{ env.github-pages-repo }} ${{ env.github-pages-repo-directory }}
-          cd ${{ env.github-pages-repo-directory }}
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-      - name: Push GitHub Pages
+          rm -r ${{ env.github-pages-repo-directory }}/*
+          cp -a ${{ env.current-repo-directory }}/build/. ${{ env.github-pages-repo-directory }}
+
+      - name: Set GitHub User Configuration
         shell: bash
         if: github.ref == env.deploy-branch
         run: |
-          cd ..
-          rm -r ${{ env.github-pages-repo-directory }}/*
-          cp -a ${{ env.current-repo-directory }}/build/. ${{ env.github-pages-repo-directory }}
-          cd ${{ env.github-pages-repo-directory }}
+          git config --global user.name ${{ env.github-user-name }}
+          git config --global user.email ${{ env.github-user-email }}
+
+      - name: Push New GitHub Pages
+        shell: bash
+        # if: github.ref == env.deploy-branch
+        working-directory: ../${{ env.github-pages-repo-directory }}
+        run: |
           git add -A
           git commit -m "commit sha -> ${{ github.sha }}"
-          git push
