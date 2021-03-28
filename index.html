@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>BlazorFocused </title>
+    <title>BlazorFocused | Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="BlazorFocused ">
+    <meta name="title" content="BlazorFocused | Documentation ">
     <meta name="generator" content="docfx 2.56.7.0">
     
     <link rel="shortcut icon" href="favicon.ico">
@@ -35,7 +35,7 @@
               </button>
               
               <a class="navbar-brand" href="index.html">
-                <img id="logo" class="svg" src="logo.svg" alt="">
+                <img id="logo" class="svg" src="images/BlazorFocused.png" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -68,7 +68,7 @@
 <pre><code class="lang-powershell">Install-Package BlazorFocused
 </code></pre>
 <p>.NET CLI</p>
-<pre><code class="lang-powershell">dotnet add package BlazoFocused
+<pre><code class="lang-powershell">dotnet add package BlazorFocused
 </code></pre>
 <h2 id="quick-start">Quick Start</h2>
 <h3 id="startup">Startup</h3>
@@ -81,7 +81,7 @@
     serviceCollection.AddStore&lt;TestClass&gt;(builder =&gt;
     {
         builder.RegisterAction&lt;TestAction&gt;();
-        builder.RegisterActionAsync&lt;TestActionAsync&gt;();
+        builder.RegisterAction&lt;TestActionAsync&gt;();
         builder.RegisterReducer&lt;TestReducer, TestClassSubset&gt;();
 
         // Services within actions and reducers
