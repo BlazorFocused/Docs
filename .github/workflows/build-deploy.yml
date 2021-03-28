@@ -56,21 +56,19 @@ jobs:
 
       - name: Copy New GitHub Pages
         shell: bash
-        working-directory: ../
         run: |
+          cd ..
           rm -r ${{ env.github-pages-repo-directory }}/*
           cp -a ${{ env.current-repo-directory }}/build/. ${{ env.github-pages-repo-directory }}
 
       - name: Set GitHub User Configuration
         shell: bash
-        if: github.ref == env.deploy-branch
         run: |
           git config --global user.name ${{ env.github-user-name }}
           git config --global user.email ${{ env.github-user-email }}
 
       - name: Push New GitHub Pages
         shell: bash
-        # if: github.ref == env.deploy-branch
         working-directory: ../${{ env.github-pages-repo-directory }}
         run: |
           git add -A
