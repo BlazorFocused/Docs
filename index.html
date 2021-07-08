@@ -96,6 +96,8 @@
         // Set initial state (optional)
         builder.SetInitialState(new TestStore { FieldOne = &quot;Test&quot; });
     });
+
+    await builder.Build().RunAsync();
 }
 </code></pre>
 <h3 id="server-side-blazor-startup">Server-side Blazor Startup</h3>
@@ -105,7 +107,7 @@
     services.AddRazorPages();
 
     // add store in DI
-    serviceCollection.AddStore&lt;TestStore&gt;(builder =&gt;
+    services.AddStore&lt;TestStore&gt;(builder =&gt;
     {
         builder.RegisterAction&lt;TestAction&gt;();
         builder.RegisterAction&lt;TestActionAsync&gt;();
