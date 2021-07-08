@@ -8,7 +8,7 @@
     <title>BlazorFocused | Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="BlazorFocused | Documentation ">
-    <meta name="generator" content="docfx 2.56.7.0">
+    <meta name="generator" content="docfx 2.58.0.0">
     
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="styles/docfx.vendor.css">
@@ -62,7 +62,8 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="blazorfocused">BlazorFocused</h1>
 
-<p>Please nagivate to the api documenation <a href="/api/index.html">here</a></p>
+<p>Adding Flux Architecture and other utilities to Blazor Components.</p>
+<p><i>For code documentation, please nagivate to the api documenation <a href="/api/index.html">here</a></i></p>
 <h2 id="installation">Installation</h2>
 <p>Package Manager</p>
 <pre><code class="lang-powershell">Install-Package BlazorFocused
@@ -71,31 +72,57 @@
 <pre><code class="lang-powershell">dotnet add package BlazorFocused
 </code></pre>
 <h2 id="quick-start">Quick Start</h2>
-<h3 id="startup">Startup</h3>
-<pre><code class="lang-csharp">public void ConfigureServices(IServiceCollection services)
+<h3 id="webassembly-blazor-startup">WebAssembly Blazor Startup</h3>
+<pre><code class="lang-csharp">public static async Task Main(string[] args)
 {
-    services.AddControllersWithViews();
-    services.AddRazorPages();
+    var builder = WebAssemblyHostBuilder.CreateDefault(args);
+
+    builder.RootComponents.Add&lt;App&gt;(&quot;#app&quot;);
+
+    builder.Services.AddScoped(sp =&gt;
+        new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
     // add store in DI
-    serviceCollection.AddStore&lt;TestClass&gt;(builder =&gt;
+    builder.Services.AddStore&lt;TestStore&gt;(builder =&gt;
     {
         builder.RegisterAction&lt;TestAction&gt;();
         builder.RegisterAction&lt;TestActionAsync&gt;();
-        builder.RegisterReducer&lt;TestReducer, TestClassSubset&gt;();
+        builder.RegisterReducer&lt;TestReducer, TestStoreSubset&gt;();
 
         // Services within actions and reducers
         builder.RegisterService&lt;TestService&gt;();
         builder.RegisterHttpClient&lt;ITestClient, TestClient&gt;();
 
         // Set initial state (optional)
-        builder.SetInitialState(new TestClass { FieldOne = &quot;Test&quot; });
+        builder.SetInitialState(new TestStore { FieldOne = &quot;Test&quot; });
+    });
+}
+</code></pre>
+<h3 id="server-side-blazor-startup">Server-side Blazor Startup</h3>
+<pre><code class="lang-csharp">public void ConfigureServices(IServiceCollection services)
+{
+    services.AddControllersWithViews();
+    services.AddRazorPages();
+
+    // add store in DI
+    serviceCollection.AddStore&lt;TestStore&gt;(builder =&gt;
+    {
+        builder.RegisterAction&lt;TestAction&gt;();
+        builder.RegisterAction&lt;TestActionAsync&gt;();
+        builder.RegisterReducer&lt;TestReducer, TestStoreSubset&gt;();
+
+        // Services within actions and reducers
+        builder.RegisterService&lt;TestService&gt;();
+        builder.RegisterHttpClient&lt;ITestClient, TestClient&gt;();
+
+        // Set initial state (optional)
+        builder.SetInitialState(new TestStore { FieldOne = &quot;Test&quot; });
     });
 }
 </code></pre>
 <h3 id="state">State</h3>
 <p>Retrieve static state value from store:</p>
-<pre><code class="lang-csharp">@inject IStore&lt;TestClass&gt; store;
+<pre><code class="lang-csharp">@inject IStore&lt;TestStore&gt; store;
 
 ...
 
@@ -103,10 +130,10 @@ store.GetState().FieldOne;
 
 </code></pre>
 <p>Retrieve state value and subscribe to store updates:</p>
-<pre><code class="lang-csharp">@inject IStore&lt;TestClass&gt; store;
+<pre><code class="lang-csharp">@inject IStore&lt;TestStore&gt; store;
 
 ...
-TestClass currentState = default;
+TestStore currentState = default;
 
 store.Subscribe((newState) =&gt; {
     // update state used in page
@@ -119,14 +146,15 @@ store.Subscribe((newState) =&gt; {
 </code></pre>
 <h3 id="reducers">Reducers</h3>
 <p>Subscribe to reduced value from store:</p>
-<pre><code class="lang-csharp">@inject IStore&lt;TestClass&gt; store;
+<pre><code class="lang-csharp">@inject IStore&lt;TestStore&gt; store;
 
 ...
-TestClassSubset currentState = default;
+TestStoreSubset subsetState = default;
 
-store.Reduce&lt;TestClassSubset&gt;(reducedState =&gt;
+store.Reduce&lt;TestStoreSubset&gt;(reducedState =&gt;
 {
-    currentState = reducedState;
+    // helpful if you do not care about the full state in your component
+    subsetState = reducedState;
 
     // inform blazor page to refresh with state update
     StateHasChanged();
@@ -134,12 +162,13 @@ store.Reduce&lt;TestClassSubset&gt;(reducedState =&gt;
 </code></pre>
 <h3 id="actions">Actions</h3>
 <p>Execute actions to update store:</p>
-<pre><code class="lang-csharp">@inject IStore&lt;TestClass&gt; store;
+<pre><code class="lang-csharp">@inject IStore&lt;TestStore&gt; store;
 
 ...
-TestClass currentState = default;
+TestStore currentState = default;
 
 // call action to be committed
+// if action updates state, component will update
 store.Dispatch&lt;TestAction&gt;();
 
 store.Subscribe((newState) =&gt; {
